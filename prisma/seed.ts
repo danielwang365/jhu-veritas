@@ -4,14 +4,14 @@ import { hash } from 'bcryptjs'
 const prisma = new PrismaClient()
 
 async function main() {
-  const hashedPassword = await hash('changeme123', 12)
+  const hashedPassword = await hash('SoliDeoGloria77!', 12)
 
   // Create default admin user
   await prisma.user.upsert({
-    where: { email: 'admin@veritasjhu.org' },
+    where: { email: 'admin@jhu.edu' },
     update: {},
     create: {
-      email: 'admin@veritasjhu.org',
+      email: 'admin@jhu.edu',
       name: 'Admin',
       hashedPassword,
       role: 'ADMIN',
